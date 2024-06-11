@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Заметки</title>
+</head>
+<body>
+    <div align="center">
+        <h1>Заметки</h1>
+        <form method="POST" action="/add_note">
+            Добавить заметку:
+            <input type="text" name="note" placeholder="заметка">
+            <button>Готово</button>
+        </form>
+        <br><br>
+        <h3>Созданные заметки:</h3>
+        <hr>
+        {% if notes %}
+            {% for note in notes %}
+            <br>{{ note }}
+            {% endfor %}
+        {% endif %}
+    </div>
+</body>
+</html>
